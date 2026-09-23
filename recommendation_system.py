@@ -59,6 +59,8 @@ print("\n========================================")
 print("       TOP CAREER RECOMMENDATIONS")
 print("========================================")
 
+print("\nNote: A higher similarity score means the career's skills are more closely related to your entered skills.")
+
 for rank, (_, row) in enumerate(top_recommendations.iterrows(), start=1):
     print(f"\n{rank}. {row['role']}")
     print(f"   Similarity Score: {row['similarity']:.4f}")
