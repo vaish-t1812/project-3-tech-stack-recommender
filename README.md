@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 # Tech Stack Career Recommendation System
 
 A content-based recommendation system that suggests career paths based on a user's skills and interests.
