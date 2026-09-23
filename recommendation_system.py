@@ -64,4 +64,24 @@ print("\nNote: A higher similarity score means the career's skills are more clos
 for rank, (_, row) in enumerate(top_recommendations.iterrows(), start=1):
     print(f"\n{rank}. {row['role']}")
     print(f"   Similarity Score: {row['similarity']:.4f}")
+
+    user_skills = {
+        skill.strip().lower()
+        for skill in user_input.split(",")
+        if skill.strip()
+    }
+
+    career_skills = {
+        skill.strip().lower()
+        for skill in row["skills"].split(",")
+        if skill.strip()
+    }
+
+    matching_skills = user_skills.intersection(career_skills)
+
+    if matching_skills:
+        print(f"   Matching Skills: {', '.join(sorted(matching_skills))}")
+    else:
+        print("   Matching Skills: No exact skill matches")
+
     print(f"   Skills: {row['skills']}")
