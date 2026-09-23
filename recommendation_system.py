@@ -59,7 +59,7 @@ print("\n========================================")
 print("       TOP CAREER RECOMMENDATIONS")
 print("========================================")
 
-for index, row in top_recommendations.iterrows():
-    print(f"\n{index + 1}. {row['role']}")
+for rank, (_, row) in enumerate(top_recommendations.iterrows(), start=1):
+    print(f"\n{rank}. {row['role']}")
     print(f"   Similarity Score: {row['similarity']:.4f}")
     print(f"   Skills: {row['skills']}")
